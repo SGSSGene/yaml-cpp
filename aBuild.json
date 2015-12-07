@@ -8,6 +8,10 @@
 				"includes": ["include/"]
 			},
 			"noWarnings" : true
+		},
+		{
+			"path" : "testsYaml",
+			"dependencies": ["yaml-cpp/yaml-cpp"]
 		}
 	]
 }
