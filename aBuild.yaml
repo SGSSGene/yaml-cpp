@@ -1,0 +1,10 @@
+name: yaml-cpp
+projects:
+  - path: yaml-cpp
+    noWarnings: true
+    legacy:
+      includes:
+        - include/
+  - dependencies:
+      - yaml-cpp/yaml-cpp
+    path: testsYaml
