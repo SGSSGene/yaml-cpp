@@ -299,7 +299,6 @@ void Scanner::ScanPlainScalar() {
   ScanScalarParams params;
   params.end =
       (InFlowContext() ? &Exp::ScanScalarEndInFlow() : &Exp::ScanScalarEnd());
-      //(InFlowContext() ? Exp::ScanScalarEndInFlow() : Exp::ScanScalarEnd());
   params.eatEnd = false;
   params.indent = (InFlowContext() ? 0 : GetTopIndent() + 1);
   params.fold = FOLD_FLOW;
