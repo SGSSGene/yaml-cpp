@@ -5,6 +5,3 @@ projects:
     legacy:
       includes:
         - include/
-  - dependencies:
-      - yaml-cpp/yaml-cpp
-    path: testsYaml
