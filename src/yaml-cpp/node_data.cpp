@@ -13,6 +13,15 @@
 namespace YAML {
 namespace detail {
 
+ bool NodeDataComperator::operator()(node const* n1, node const* n2) {
+	if (n1->type() == NodeType::Scalar and n2->type() == NodeType::Scalar) {
+		return n1->scalar () < n2->scalar();
+	}
+	return n1 < n2;
+}
+
+
+
 std::string node_data::empty_scalar;
 
 node_data::node_data()

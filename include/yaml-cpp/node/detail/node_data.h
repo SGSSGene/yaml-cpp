@@ -27,6 +27,13 @@ class node;
 
 namespace YAML {
 namespace detail {
+
+class node;
+
+struct NodeDataComperator {
+	bool operator()(node const* n1, node const* n2);
+};
+
 class YAML_CPP_API node_data {
  public:
   node_data();
@@ -114,13 +121,14 @@ class YAML_CPP_API node_data {
   mutable std::size_t m_seqSize;
 
   // map
-  typedef std::map<node*, node*> node_map;
+  typedef std::map<node*, node*, NodeDataComperator> node_map;
   node_map m_map;
 
   typedef std::pair<node*, node*> kv_pair;
   typedef std::list<kv_pair> kv_pairs;
   mutable kv_pairs m_undefinedPairs;
 };
+
 }
 }
 

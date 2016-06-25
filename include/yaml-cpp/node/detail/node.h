@@ -16,6 +16,13 @@
 
 namespace YAML {
 namespace detail {
+
+class node;
+
+struct NodeComperator {
+	bool operator()(node const* n1, node const* n2);
+};
+
 class node {
  public:
   node() : m_pRef(new node_ref) {}
@@ -160,9 +167,18 @@ class node {
 
  private:
   shared_node_ref m_pRef;
-  typedef std::set<node*> nodes;
+
+  typedef std::set<node*, NodeComperator> nodes;
   nodes m_dependencies;
 };
+
+inline bool NodeComperator::operator()(node const* n1, node const* n2) {
+	if (n1->type() == NodeType::Scalar and n2->type() == NodeType::Scalar) {
+		return n1->scalar () < n2->scalar();
+	}
+}
+
+
 }
 }
 
