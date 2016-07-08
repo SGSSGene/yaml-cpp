@@ -1,6 +1,6 @@
 name: yaml-cpp
 projects:
-  - path: yaml-cpp
+  - name: yaml-cpp
     noWarnings: true
     legacy:
       includes:
