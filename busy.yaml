@@ -4,4 +4,4 @@ projects:
     noWarnings: true
     legacy:
       includes:
-        - include/
+        - include
