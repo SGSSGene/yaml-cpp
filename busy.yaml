@@ -5,3 +5,4 @@ projects:
     legacy:
       includes:
         - include
+    autoDependenciesDiscovery: false
