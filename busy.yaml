@@ -2,6 +2,7 @@ name: yaml-cpp
 projects:
   - name: yaml-cpp
     noWarnings: true
+    warningsAsErrors: false
     legacy:
       includes:
         - include
